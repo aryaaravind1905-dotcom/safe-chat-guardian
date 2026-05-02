@@ -14,7 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      firewall_logs: {
+        Row: {
+          attack_type: string | null
+          created_at: string
+          decision: string
+          final_prompt: string | null
+          id: string
+          latency_ms: number | null
+          llm_response: string | null
+          matched_patterns: Json | null
+          normalized_input: string | null
+          output_filter_action: string | null
+          risk_score: number
+          security_enabled: boolean
+          session_id: string
+          user_input: string
+        }
+        Insert: {
+          attack_type?: string | null
+          created_at?: string
+          decision: string
+          final_prompt?: string | null
+          id?: string
+          latency_ms?: number | null
+          llm_response?: string | null
+          matched_patterns?: Json | null
+          normalized_input?: string | null
+          output_filter_action?: string | null
+          risk_score?: number
+          security_enabled: boolean
+          session_id: string
+          user_input: string
+        }
+        Update: {
+          attack_type?: string | null
+          created_at?: string
+          decision?: string
+          final_prompt?: string | null
+          id?: string
+          latency_ms?: number | null
+          llm_response?: string | null
+          matched_patterns?: Json | null
+          normalized_input?: string | null
+          output_filter_action?: string | null
+          risk_score?: number
+          security_enabled?: boolean
+          session_id?: string
+          user_input?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
